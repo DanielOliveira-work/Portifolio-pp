@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daniel Oliveira | Portfólio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-frame">
+      <div class="hero-head">
+        <div class="hero-meta">
+          <span class="hero-badge" data-i18n="hero.badge">PORTFOLIO 2025</span>
+          <span class="hero-progress" aria-hidden="true">
+            <span class="hero-progress-bar"></span>
+          </span>
+          <span class="hero-step" data-i18n="hero.step" data-i18n-html="true">01<span class="divider"></span>03</span>
+        </div>
+        <div class="lang-switch" role="group" aria-label="Selecionar idioma">
+          <button class="lang-option is-active" type="button" data-lang="pt" data-i18n="lang.pt">PT</button>
+          <button class="lang-option" type="button" data-lang="en" data-i18n="lang.en">EN</button>
+        </div>
+      </div>
+      <nav class="hero-nav" aria-label="Menu principal">
+        <a href="#sobre" data-i18n="hero.nav.about">ABOUT</a>
+        <a href="#projetos" data-i18n="hero.nav.gallery">GALLERY</a>
+        <a href="#contato" data-i18n="hero.nav.contacts">CONTACTS</a>
+      </nav>
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <span class="eyebrow" data-i18n="hero.eyebrow">Front-end Experience — crafted</span>
+          <h1 class="hero-title">
+            <span class="hero-name" data-i18n="hero.name">Daniel Oliveira,</span>
+            <span class="hero-highlight" data-i18n="hero.role">desenvolvedor fullstack</span>
+          </h1>
+          <p data-i18n="hero.description">
+            Daniel Oliveira é um desenvolvedor front-end focado em experiências digitais sofisticadas, combinando UI minimalista com performance e acessibilidade.
+          </p>
+          <div class="hero-actions">
+            <a class="hero-primary" href="schedule.html" data-i18n="hero.cta.primary">Book a project call</a>
+            <button class="hero-secondary" type="button" data-scroll="#projetos" data-i18n="hero.cta.secondary">See more</button>
+          </div>
+        </div>
+        <div class="hero-visual" aria-hidden="true">
+          <div class="hero-orbit">
+            <div class="hero-glow"></div>
+            <div class="hero-circle"></div>
+            <div class="hero-statue"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <section id="sobre" class="section">
+      <h2 data-i18n="about.title">Sobre mim</h2>
+      <div class="bio">
+        <p class="bio-tagline" data-i18n="about.tagline">🚀 O Arquiteto Digital — Full Stack Developer | Visão Estratégica &amp; Execução Ágil</p>
+        <p data-i18n="about.intro">Sou um desenvolvedor full stack de 27 anos com a versatilidade necessária para construir o futuro digital, do conceito à entrega. Atualmente curso Análise e Desenvolvimento de Sistemas (ADS), unindo o rigor acadêmico com a prática intensa do mercado.</p>
+        <div class="bio-grid">
+          <div class="bio-block">
+            <h3 data-i18n="about.frontend.title">Front-end</h3>
+            <p data-i18n="about.frontend.desc">Interfaces modernas, intuitivas e responsivas. Foco em UX de alto nível que encanta e engaja, com atenção a microinterações e performance.</p>
+          </div>
+          <div class="bio-block">
+            <h3 data-i18n="about.backend.title">Back-end</h3>
+            <p data-i18n="about.backend.desc">Lógica de negócio com código limpo, seguro e escalável. Construo APIs e integrações pensando em performance e manutenção.</p>
+          </div>
+        </div>
+        <p data-i18n="about.closing">Minha marca registrada é a precisão e a agilidade. Entrego projetos otimizados, alinhados aos objetivos do negócio e prontos para gerar impacto real.</p>
+        <p class="bio-cta" data-i18n="about.cta">Se você busca um parceiro que domina a stack completa e entrega valor com velocidade, vamos construir algo notável.</p>
+      </div>
+    </section>
+    <section id="projetos" class="section">
+      <h2 data-i18n="projects.title">Projetos</h2>
+      <div class="carousel" data-carousel>
+        <div class="carousel-track-wrapper">
+          <div class="carousel-track">
+          <article class="card" data-slide>
+            <h3 data-i18n="projects.card1.title">Portfolio Landing Page</h3>
+            <p data-i18n="projects.card1.desc">Homepage moderna para apresentar serviços e CTA de contato.</p>
+            <button class="toggle" data-i18n="projects.toggle.show" data-i18n-alt="projects.toggle.hide" data-toggle-state="hidden">Ver detalhes</button>
+            <div class="details hidden">
+              <p data-i18n="projects.card1.details">Stack prevista: HTML, CSS, animações suaves. Próximo passo: wireframe.</p>
+            </div>
+          </article>
+          <article class="card" data-slide>
+            <h3 data-i18n="projects.card2.title">Dashboard Interativo</h3>
+            <p data-i18n="projects.card2.desc">Visualização de dados fictícios com gráficos responsivos.</p>
+            <button class="toggle" data-i18n="projects.toggle.show" data-i18n-alt="projects.toggle.hide" data-toggle-state="hidden">Ver detalhes</button>
+            <div class="details hidden">
+              <p data-i18n="projects.card2.details">Stack prevista: React, Tailwind. Próximo passo: definir componentes.</p>
+            </div>
+          </article>
+          <article class="card" data-slide>
+            <h3 data-i18n="projects.card3.title">UI Component Library</h3>
+            <p data-i18n="projects.card3.desc">Biblioteca de componentes reutilizáveis com design neon.</p>
+            <button class="toggle" data-i18n="projects.toggle.show" data-i18n-alt="projects.toggle.hide" data-toggle-state="hidden">Ver detalhes</button>
+            <div class="details hidden">
+              <p data-i18n="projects.card3.details">Stack prevista: Web Components. Próximo passo: catalogar padrões.</p>
+            </div>
+          </article>
+          </div>
+        </div>
+        <div class="carousel-controls">
+          <button class="carousel-control prev" aria-label="Projeto anterior" data-i18n="projects.prev" data-i18n-attr="aria-label">&#8249;</button>
+          <div class="carousel-dots" data-carousel-dots></div>
+          <button class="carousel-control next" aria-label="Próximo projeto" data-i18n="projects.next" data-i18n-attr="aria-label">&#8250;</button>
+        </div>
+      </div>
+    </section>
+    <section id="contato" class="section">
+      <h2 data-i18n="contact.title">Contato</h2>
+      <div class="contact-links" role="list">
+        <a class="contact-link" href="https://github.com/DanielOliveira-work" target="_blank" rel="noopener" role="listitem">
+          <svg class="contact-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24">
+            <path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.11.79-.25.79-.56 0-.28-.01-1.03-.02-2.02-3.22.7-3.9-1.55-3.9-1.55-.53-1.35-1.3-1.7-1.3-1.7-1.06-.73.08-.72.08-.72 1.17.08 1.78 1.2 1.78 1.2 1.04 1.78 2.73 1.27 3.4.97.1-.76.4-1.27.73-1.56-2.57-.3-5.27-1.29-5.27-5.75 0-1.27.45-2.31 1.19-3.12-.12-.3-.52-1.52.11-3.16 0 0 .97-.31 3.18 1.19a11.08 11.08 0 0 1 5.79 0c2.2-1.5 3.17-1.19 3.17-1.19.63 1.64.23 2.86.11 3.16.74.81 1.18 1.85 1.18 3.12 0 4.48-2.71 5.44-5.29 5.73.41.35.78 1.04.78 2.1 0 1.52-.01 2.74-.01 3.12 0 .31.21.68.8.56A11.5 11.5 0 0 0 12 .5Z"/>
+          </svg>
+          <span data-i18n="contact.github">GitHub</span>
+        </a>
+        <a class="contact-link" href="https://www.linkedin.com/in/danieloliveirawork/" target="_blank" rel="noopener" role="listitem">
+          <svg class="contact-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24">
+            <path d="M4.98 3.5a2.25 2.25 0 1 1 0 4.5 2.25 2.25 0 0 1 0-4.5Zm.02 5.75H2.5V21h2.5V9.25Zm5 0H7.5V21H10V14.5c0-1.54.58-2.5 1.82-2.5 1.18 0 1.68.85 1.68 2.5V21h2.5v-7.25c0-3.02-1.61-4.5-3.77-4.5-1.74 0-2.53.96-2.98 1.63h.02V9.25Z"/>
+          </svg>
+          <span data-i18n="contact.linkedin">LinkedIn</span>
+        </a>
+        <a class="contact-link" href="mailto:work.doliveira@gmail.com" role="listitem">
+          <svg class="contact-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24">
+            <path d="M3.5 5h17a1.5 1.5 0 0 1 1.5 1.5v11a1.5 1.5 0 0 1-1.5 1.5h-17A1.5 1.5 0 0 1 2 17.5v-11A1.5 1.5 0 0 1 3.5 5Zm8.5 7.25L4.68 7H4.5a.5.5 0 0 0-.5.5v.33L12 13.6l8-5.77V7.5a.5.5 0 0 0-.5-.5h-.18ZM12 15.4l-8-5.77V17a.5.5 0 0 0 .5.5h17a.5.5 0 0 0 .5-.5v-7.37Z"/>
+          </svg>
+          <span data-i18n="contact.email">Email</span>
+        </a>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <span data-i18n="footer.copy">2025 Daniel Oliveira</span>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

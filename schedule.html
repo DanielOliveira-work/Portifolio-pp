@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agende uma reunião | Daniel Oliveira</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="hero schedule-hero">
+    <div class="hero-frame">
+      <div class="hero-head">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="index.html" data-i18n="schedule.breadcrumb">← Voltar para o portfólio</a>
+        </nav>
+        <div class="lang-switch" role="group" aria-label="Selecionar idioma">
+          <button class="lang-option is-active" type="button" data-lang="pt" data-i18n="lang.pt">PT</button>
+          <button class="lang-option" type="button" data-lang="en" data-i18n="lang.en">EN</button>
+        </div>
+      </div>
+      <div class="schedule-hero-content">
+        <h1 data-i18n="schedule.title">Agende uma reunião</h1>
+        <p data-i18n="schedule.subtitle">Reserve um horário para conversarmos sobre seu próximo projeto.</p>
+      </div>
+    </div>
+  </header>
+  <main class="schedule">
+    <section class="schedule-text">
+      <h2 data-i18n="schedule.text.title">Marque uma consulta gratuita</h2>
+      <p data-i18n="schedule.text.body">Marque uma consulta gratuita para combinarmos um projeto demo. Tudo começa com uma ideia. Talvez você queira abrir um negócio. Talvez você queira transformar um passatempo em algo mais sério. Ou talvez você tenha um projeto criativo para divulgar ao mundo. Seja o que for, o modo de contar sua história on-line faz toda a diferença.</p>
+    </section>
+    <section class="schedule-form">
+      <h2 data-i18n="schedule.form.title">Dados para contato</h2>
+      <form action="#" method="post" class="form-grid">
+        <label>
+          <span data-i18n="schedule.form.firstName">Nome*</span>
+          <input type="text" name="firstName" required autocomplete="given-name">
+        </label>
+        <label>
+          <span data-i18n="schedule.form.lastName">Sobrenome</span>
+          <input type="text" name="lastName" autocomplete="family-name">
+        </label>
+        <label>
+          <span data-i18n="schedule.form.phone">Telefone*</span>
+          <input type="tel" name="phone" required autocomplete="tel">
+        </label>
+        <label>
+          <span data-i18n="schedule.form.email">Email*</span>
+          <input type="email" name="email" required autocomplete="email">
+        </label>
+        <fieldset class="contact-preference">
+          <legend data-i18n="schedule.form.preference">Como prefere ser contatado?</legend>
+          <div class="contact-options">
+            <label class="option">
+              <input type="radio" name="contactPreference" value="email" checked>
+              <span data-i18n="schedule.form.prefEmail">Email</span>
+            </label>
+            <label class="option">
+              <input type="radio" name="contactPreference" value="whatsapp">
+              <span data-i18n="schedule.form.prefWhatsapp">WhatsApp</span>
+            </label>
+          </div>
+        </fieldset>
+        <button type="submit" class="schedule-submit" data-i18n="schedule.form.submit">Enviar pedido</button>
+      </form>
+    </section>
+  </main>
+  <footer class="footer">
+    <span data-i18n="footer.copy">2025 Daniel Oliveira</span>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
