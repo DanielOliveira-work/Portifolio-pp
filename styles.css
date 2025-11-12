@@ -283,11 +283,12 @@ small {
 }
 
 .hero-actions {
-  display: grid;
-  grid-auto-flow: row;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   gap: 1.1rem;
-  justify-items: flex-start;
-  max-width: 100%;
+  width: min(100%, 320px);
+  margin: 0;
 }
 
 .hero-primary,
@@ -1014,10 +1015,9 @@ main {
   }
 
   .hero-actions {
-    display: grid;
-    grid-auto-flow: row;
+    width: min(100%, 340px);
+    margin: 0 auto;
     gap: 0.95rem;
-    justify-items: center;
   }
 
   .hero-visual {
@@ -1099,26 +1099,22 @@ main {
 
   .hero-actions {
     width: 100%;
-    max-width: 100%;
-    gap: 0.5rem;
-    justify-items: stretch;
+    max-width: 320px;
+    gap: 0.65rem;
     padding: 0;
-    margin: 0;
+    margin: 0 auto;
   }
 
   .hero-actions > * {
     width: 100%;
-    max-width: 100%;
     justify-content: center;
-    min-width: 0;
-    box-sizing: border-box;
     padding: 0.7rem 1rem !important;
     font-size: 0.65rem !important;
     letter-spacing: 0.15em !important;
   }
 
   .hero-secondary {
-    padding-right: 1.8rem !important;
+    padding-right: 2rem !important;
   }
 
   .hero-secondary::after {
@@ -1208,29 +1204,27 @@ main {
   }
 
   .hero-actions {
-    display: grid;
-    grid-auto-flow: row;
-    gap: 0.4rem;
+    width: 100%;
+    max-width: 280px;
+    gap: 0.5rem;
     padding: 0;
-    margin: 0;
-    justify-items: stretch;
+    margin: 0 auto;
   }
 
   .hero-primary,
   .hero-secondary {
-    letter-spacing: 0.1em !important;
-    padding: 0.6rem 0.8rem !important;
-    font-size: 0.6rem !important;
-    box-sizing: border-box;
+    letter-spacing: 0.12em !important;
+    padding: 0.65rem 0.9rem !important;
+    font-size: 0.62rem !important;
   }
 
   .hero-secondary {
-    padding-right: 1.5rem !important;
+    padding-right: 1.6rem !important;
   }
 
   .hero-secondary::after {
-    right: 0.6rem !important;
-    font-size: 0.8rem !important;
+    right: 0.65rem !important;
+    font-size: 0.85rem !important;
   }
 
   .hero-orbit {
