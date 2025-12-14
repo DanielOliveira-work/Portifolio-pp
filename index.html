@@ -74,39 +74,46 @@
     </section>
     <section id="projetos" class="section">
       <h2 data-i18n="projects.title">Projetos</h2>
-      <div class="carousel" data-carousel>
-        <div class="carousel-track-wrapper">
-          <div class="carousel-track">
-          <article class="card" data-slide>
-            <h3 data-i18n="projects.card1.title">Portfolio Landing Page</h3>
-            <p data-i18n="projects.card1.desc">Homepage moderna para apresentar serviços e CTA de contato.</p>
-            <button class="toggle" data-i18n="projects.toggle.show" data-i18n-alt="projects.toggle.hide" data-toggle-state="hidden">Ver detalhes</button>
-            <div class="details hidden">
-              <p data-i18n="projects.card1.details">Stack prevista: HTML, CSS, animações suaves. Próximo passo: wireframe.</p>
-            </div>
-          </article>
-          <article class="card" data-slide>
-            <h3 data-i18n="projects.card2.title">Dashboard Interativo</h3>
-            <p data-i18n="projects.card2.desc">Visualização de dados fictícios com gráficos responsivos.</p>
-            <button class="toggle" data-i18n="projects.toggle.show" data-i18n-alt="projects.toggle.hide" data-toggle-state="hidden">Ver detalhes</button>
-            <div class="details hidden">
-              <p data-i18n="projects.card2.details">Stack prevista: React, Tailwind. Próximo passo: definir componentes.</p>
-            </div>
-          </article>
-          <article class="card" data-slide>
-            <h3 data-i18n="projects.card3.title">UI Component Library</h3>
-            <p data-i18n="projects.card3.desc">Biblioteca de componentes reutilizáveis com design neon.</p>
-            <button class="toggle" data-i18n="projects.toggle.show" data-i18n-alt="projects.toggle.hide" data-toggle-state="hidden">Ver detalhes</button>
-            <div class="details hidden">
-              <p data-i18n="projects.card3.details">Stack prevista: Web Components. Próximo passo: catalogar padrões.</p>
-            </div>
-          </article>
-          </div>
+      <div class="projects-slider" data-slider>
+        <div class="slider-viewport">
+          <ul class="slider-track">
+            <li class="project-card" data-slide>
+              <header class="project-head">
+                <span class="project-pill" data-i18n="projects.card1.pill">Blog · Fotografia</span>
+                <span class="project-count">01</span>
+              </header>
+              <img src="assets/Captura de tela 2025-12-14 125703.png" alt="Tela do blog de fotografia com galeria de imagens" class="project-image" />
+              <h3 data-i18n="projects.card1.title">Blog de Fotografia</h3>
+              <p data-i18n="projects.card1.desc">Blog de fotografia com galeria de imagens para destacar trabalhos visuais.</p>
+              <p class="project-meta" data-i18n="projects.card1.details">Implementado com HTML, CSS e JavaScript, focado em vitrine de fotos.</p>
+              <button class="project-cta" type="button" data-i18n="projects.cta">Ver estudo</button>
+            </li>
+            <li class="project-card" data-slide>
+              <header class="project-head">
+                <span class="project-pill" data-i18n="projects.card2.pill">Dashboard · Data</span>
+                <span class="project-count">02</span>
+              </header>
+              <h3 data-i18n="projects.card2.title">Dashboard Interativo</h3>
+              <p data-i18n="projects.card2.desc">Visualização de dados fictícios com gráficos responsivos.</p>
+              <p class="project-meta" data-i18n="projects.card2.details">Stack prevista: React, Tailwind. Próximo passo: definir componentes.</p>
+              <button class="project-cta" type="button" data-i18n="projects.cta">Ver estudo</button>
+            </li>
+            <li class="project-card" data-slide>
+              <header class="project-head">
+                <span class="project-pill" data-i18n="projects.card3.pill">Design · System</span>
+                <span class="project-count">03</span>
+              </header>
+              <h3 data-i18n="projects.card3.title">Biblioteca de Componentes UI</h3>
+              <p data-i18n="projects.card3.desc">Biblioteca de componentes reutilizáveis com design neon.</p>
+              <p class="project-meta" data-i18n="projects.card3.details">Stack prevista: Web Components. Próximo passo: catalogar padrões.</p>
+              <button class="project-cta" type="button" data-i18n="projects.cta">Ver estudo</button>
+            </li>
+          </ul>
         </div>
-        <div class="carousel-controls">
-          <button class="carousel-control prev" aria-label="Projeto anterior" data-i18n="projects.prev" data-i18n-attr="aria-label">&#8249;</button>
-          <div class="carousel-dots" data-carousel-dots></div>
-          <button class="carousel-control next" aria-label="Próximo projeto" data-i18n="projects.next" data-i18n-attr="aria-label">&#8250;</button>
+        <div class="slider-nav">
+          <button class="slider-arrow" type="button" data-slider-prev aria-label="Projeto anterior" data-i18n="projects.prev" data-i18n-attr="aria-label">&#8249;</button>
+          <div class="slider-dots" data-slider-dots></div>
+          <button class="slider-arrow" type="button" data-slider-next aria-label="Próximo projeto" data-i18n="projects.next" data-i18n-attr="aria-label">&#8250;</button>
         </div>
       </div>
     </section>
@@ -125,7 +132,7 @@
           </svg>
           <span data-i18n="contact.linkedin">LinkedIn</span>
         </a>
-        <a class="contact-link" href="mailto:work.doliveira@gmail.com" role="listitem">
+        <a class="contact-link" href="schedule.html" role="listitem">
           <svg class="contact-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24">
             <path d="M3.5 5h17a1.5 1.5 0 0 1 1.5 1.5v11a1.5 1.5 0 0 1-1.5 1.5h-17A1.5 1.5 0 0 1 2 17.5v-11A1.5 1.5 0 0 1 3.5 5Zm8.5 7.25L4.68 7H4.5a.5.5 0 0 0-.5.5v.33L12 13.6l8-5.77V7.5a.5.5 0 0 0-.5-.5h-.18ZM12 15.4l-8-5.77V17a.5.5 0 0 0 .5.5h17a.5.5 0 0 0 .5-.5v-7.37Z"/>
           </svg>
