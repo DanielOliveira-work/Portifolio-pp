@@ -377,10 +377,27 @@ function setupSlider() {
   goToSlide(0);
 }
 
+function setupThemeToggle() {
+  const btn = document.getElementById('themeToggle');
+  if (!btn) return;
+  const saved = localStorage.getItem('theme') || 'dark';
+  document.documentElement.setAttribute('data-theme', saved);
+  document.body.setAttribute('data-theme', saved);
+
+  btn.addEventListener('click', () => {
+    const current = document.body.getAttribute('data-theme') || 'dark';
+    const next = current === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    document.body.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
+  });
+}
+
 window.addEventListener('DOMContentLoaded', () => {
   setupLangSwitch();
   setupSmoothScroll();
   setupScheduleForm();
   setupSlider();
+  setupThemeToggle();
   applyTranslations(currentLang);
 });
