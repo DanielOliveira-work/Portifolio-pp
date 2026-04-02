@@ -100,7 +100,7 @@ small {
   right: calc((100% - min(1200px, 90vw)) / 2);
   bottom: clamp(4rem, 8vw, 6rem);
   width: clamp(300px, 32vw, 460px);
-  height: calc(100% - clamp(4rem, 8vw, 6rem));
+  height: auto;
   display: flex;
   align-items: flex-end;
   justify-content: center;
