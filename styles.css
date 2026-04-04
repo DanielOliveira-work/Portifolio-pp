@@ -123,7 +123,10 @@ body[data-theme="light"] .lang-switch {
 body::before {
   content: "";
   position: fixed;
-  inset: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
   background: url('assets/danielimage.png') left 10% center / auto 85% no-repeat;
   opacity: 0.30;
   pointer-events: none;
@@ -133,7 +136,10 @@ body::before {
 body::after {
   content: "";
   position: fixed;
-  inset: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
   background: url('assets/logo-lateral.png') right 5% center / auto 80% no-repeat;
   opacity: 0.18;
   pointer-events: none;
@@ -469,6 +475,21 @@ body[data-theme="light"] .theme-toggle {
   transform: scaleX(1);
 }
 
+.back-btn {
+  color: rgba(230, 235, 255, 0.5) !important;
+  font-size: 0.7rem !important;
+  letter-spacing: 0.2em !important;
+  margin-right: auto;
+}
+
+.back-btn::after {
+  display: none !important;
+}
+
+body[data-theme="light"] .back-btn {
+  color: rgba(13, 15, 26, 0.45) !important;
+}
+
 .hero-inner {
   display: flex;
   flex-direction: column;
@@ -532,7 +553,7 @@ body[data-theme="light"] .theme-toggle {
 .hero-actions {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   gap: 1.1rem;
   width: min(100%, 320px);
   margin: 0;
@@ -913,6 +934,23 @@ main {
   display: flex;
   flex-direction: column;
   gap: 4rem;
+  position: relative;
+  z-index: 2;
+}
+
+.main-wrap {
+  position: relative;
+  z-index: 2;
+  background:
+    radial-gradient(circle at 12% -8%, rgba(255, 51, 92, 0.06), transparent 46%),
+    radial-gradient(circle at 100% 0%, rgba(0, 162, 255, 0.05), transparent 55%),
+    var(--bg);
+}
+
+body[data-theme="light"] .main-wrap {
+  background:
+    radial-gradient(circle at 12% -8%, rgba(255, 51, 92, 0.05), transparent 46%),
+    #f0f2f8;
 }
 
 .section {
