@@ -5,15 +5,172 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Daniel Oliveira | Projetos</title>
   <script>
-    const t = localStorage.getItem('theme') || 'dark';
-    document.documentElement.setAttribute('data-theme', t);
-    document.documentElement.style.colorScheme = t;
-    document.addEventListener('DOMContentLoaded', () => {
-      document.body.setAttribute('data-theme', t); document.body.classList.toggle('theme-light', t === 'light'); document.body.classList.toggle('theme-dark', t !== 'light');
-      
-    });
+    (function() {
+      const t = localStorage.getItem('theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', t);
+      document.documentElement.style.colorScheme = t;
+      document.addEventListener('DOMContentLoaded', function() {
+        const savedLang = localStorage.getItem('lang') || 'pt';
+        document.querySelectorAll('.lang-option').forEach(b => b.classList.toggle('is-active', b.getAttribute('data-lang') === savedLang));
+        document.body.setAttribute('data-theme', t);
+      });
+    })();
   </script>
-  <link rel="stylesheet" href="styles.css?v=2">
+  <link rel="stylesheet" href="styles.css?v=3">
+  <style>
+    /* Reset para esta página */
+    html, body { margin: 0; padding: 0; height: 100%; overflow: hidden; }
+
+    body { display: flex; flex-direction: column; height: 100vh; }
+
+    body::before, body::after { display: none !important; }
+
+    /* Fundo escuro padrão, claro no modo light */
+    body { background: #040509; }
+    html[data-theme="light"] body,
+    body[data-theme="light"] { background: #f0f2f8; }
+
+    /* Carrossel */
+    .proj-stage {
+      flex: 1;
+      display: flex;
+      flex-direction: row;
+      overflow: hidden;
+      position: relative;
+      min-height: 0;
+    }
+
+    .proj-track {
+      display: flex;
+      flex-direction: row;
+      height: 100%;
+      width: 100%;
+      overflow-x: auto;
+      overflow-y: hidden;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: none;
+      gap: 3px;
+      cursor: grab;
+    }
+
+    .proj-track:active { cursor: grabbing; }
+    .proj-track::-webkit-scrollbar { display: none; }
+
+    .proj-item {
+      flex: 0 0 clamp(280px, 33vw, 460px);
+      height: 100%;
+      scroll-snap-align: start;
+      position: relative;
+      overflow: hidden;
+      text-decoration: none;
+      display: block;
+      background: #111;
+    }
+
+    .proj-item-bg {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      filter: brightness(0.5);
+      transition: transform 0.6s ease, filter 0.4s ease;
+    }
+
+    .proj-item:hover .proj-item-bg {
+      transform: scale(1.06);
+      filter: brightness(0.65);
+    }
+
+    .proj-item-top {
+      position: absolute;
+      top: 1.75rem;
+      left: 1.75rem;
+      right: 1.75rem;
+      z-index: 2;
+      transition: transform 0.4s ease;
+    }
+
+    .proj-item:hover .proj-item-top { transform: translateY(-8px); }
+
+    .proj-item-cat {
+      display: block;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.62rem;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 0.6rem;
+    }
+
+    .proj-item-name {
+      font-family: 'Inter', sans-serif;
+      font-size: clamp(1.3rem, 2.2vw, 1.9rem);
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.15;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin: 0;
+    }
+
+    .proj-item-label {
+      position: absolute;
+      bottom: 2.5rem;
+      left: 1.5rem;
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      transform: rotate(180deg);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.58rem;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.3);
+      z-index: 2;
+      transition: color 0.3s ease;
+    }
+
+    .proj-item:hover .proj-item-label { color: rgba(255,255,255,0.65); }
+
+    /* Barra inferior com prev/next */
+    .proj-bar {
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      padding: 0.65rem 1.75rem;
+      background: rgba(4,5,9,0.98);
+    }
+
+    html[data-theme="light"] .proj-bar,
+    body[data-theme="light"] .proj-bar {
+      background: rgba(220,222,235,0.98);
+    }
+
+    html[data-theme="light"] .proj-btn,
+    body[data-theme="light"] .proj-btn {
+      color: rgba(13,15,26,0.6);
+    }
+
+    html[data-theme="light"] .proj-btn:hover,
+    body[data-theme="light"] .proj-btn:hover {
+      color: #0d0f1a;
+    }
+
+    .proj-btn {
+      background: none;
+      border: none;
+      color: rgba(235,241,255,0.5);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.68rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      cursor: pointer;
+      padding: 0.4rem 0;
+      transition: color 0.25s ease;
+    }
+
+    .proj-btn:hover { color: #fff; }
+  </style>
 </head>
 <body>
   <nav class="page-nav-bar">
@@ -41,46 +198,37 @@
       <a href="schedule.html" data-i18n="hero.nav.contacts">Contato</a>
     </div>
   </nav>
-  <div class="main-wrap">
-    <main>
-      <section id="projetos" class="section">
-        <h2 data-i18n="projects.title">Projetos</h2>
-        <div class="projects-slider" data-slider>
-          <div class="slider-viewport">
-            <ul class="slider-track">
-              <li class="project-card" data-slide>
-                <header class="project-head">
-                  <span class="project-pill" data-i18n="projects.card1.pill">Blog · Fotografia</span>
-                  <span class="project-count">01</span>
-                </header>
-                <img src="assets/Captura de tela 2025-12-14 125703.png" alt="Tela do blog de fotografia" class="project-image" />
-                <h3 data-i18n="projects.card1.title">Blog de Fotografia</h3>
-                <p data-i18n="projects.card1.desc">Blog de fotografia com galeria de imagens para destacar trabalhos visuais.</p>
-                <p class="project-meta" data-i18n="projects.card1.details">Implementado com HTML, CSS e JavaScript, focado em vitrine de fotos.</p>
-                <button class="project-cta" type="button" data-i18n="projects.cta">Ver estudo</button>
-              </li>
-              <li class="project-card" data-slide>
-                <header class="project-head">
-                  <span class="project-pill" data-i18n="projects.card4.pill">E-commerce · Moda</span>
-                  <span class="project-count">02</span>
-                </header>
-                <img src="assets/Captura de Tela 2026-04-02 às 09.19.25.png" alt="Tela do site Brechó Jujuzinha" class="project-image" />
-                <h3 data-i18n="projects.card4.title">Brechó Jujuzinha</h3>
-                <p data-i18n="projects.card4.desc">Loja online de brechó com catálogo de produtos e experiência de compra moderna.</p>
-                <p class="project-meta" data-i18n="projects.card4.details">Desenvolvido com Next.js e Tailwind CSS, com foco em UX e performance.</p>
-                <a class="project-cta" href="https://brecho-jujuzinha.vercel.app" target="_blank" rel="noopener" data-i18n="projects.card4.cta">Ver projeto</a>
-              </li>
-            </ul>
-          </div>
-          <div class="slider-nav">
-            <button class="slider-arrow" type="button" data-slider-prev aria-label="Projeto anterior">&#8249;</button>
-            <div class="slider-dots" data-slider-dots></div>
-            <button class="slider-arrow" type="button" data-slider-next aria-label="Próximo projeto">&#8250;</button>
-          </div>
+
+  <div class="proj-stage">
+    <div class="proj-track" id="projTrack">
+
+      <a href="projeto-fotografia.html" class="proj-item">
+        <div class="proj-item-bg" style="background-image:url('assets/Captura de tela 2025-12-14 125703.png')"></div>
+        <div class="proj-item-top">
+          <span class="proj-item-cat">Blog · Fotografia</span>
+          <h2 class="proj-item-name">Blog de<br>Fotografia</h2>
         </div>
-      </section>
-    </main>
-  </div> class="footer">
+        <span class="proj-item-label">FOTOGRAFIA</span>
+      </a>
+
+      <a href="projeto-brecho.html" class="proj-item">
+        <div class="proj-item-bg" style="background-image:url('assets/Captura de Tela 2026-04-02 às 09.19.25.png')"></div>
+        <div class="proj-item-top">
+          <span class="proj-item-cat">E-commerce · Moda</span>
+          <h2 class="proj-item-name">Brechó<br>Jujuzinha</h2>
+        </div>
+        <span class="proj-item-label">E-COMMERCE</span>
+      </a>
+
+    </div>
+  </div>
+
+  <div class="proj-bar">
+    <button class="proj-btn" id="projPrev">← PREV</button>
+    <button class="proj-btn" id="projNext">NEXT →</button>
+  </div>
+
+  <footer class="footer">
     <span data-i18n="footer.copy">2026 Daniel Oliveira</span>
     <div class="footer-links">
       <a href="https://github.com/DanielOliveira-work" target="_blank" rel="noopener" aria-label="GitHub">
@@ -91,6 +239,28 @@
       </a>
     </div>
   </footer>
+
   <script src="script.js"></script>
+  <script>
+    const track = document.getElementById('projTrack');
+    const itemW = () => track.querySelector('.proj-item').offsetWidth + 3;
+    document.getElementById('projPrev').onclick = () => track.scrollBy({ left: -itemW(), behavior: 'smooth' });
+    document.getElementById('projNext').onclick = () => track.scrollBy({ left: itemW(), behavior: 'smooth' });
+
+    // drag
+    let startX, isDragging = false;
+    track.addEventListener('mousedown', e => { startX = e.clientX; isDragging = true; track.style.transition = 'none'; });
+    window.addEventListener('mouseup', e => {
+      if (!isDragging) return; isDragging = false; track.style.transition = '';
+      const diff = startX - e.clientX;
+      if (Math.abs(diff) > 50) track.scrollBy({ left: diff > 0 ? itemW() : -itemW(), behavior: 'smooth' });
+    });
+    track.addEventListener('dragstart', e => e.preventDefault());
+    track.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
+    track.addEventListener('touchend', e => {
+      const diff = startX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 50) track.scrollBy({ left: diff > 0 ? itemW() : -itemW(), behavior: 'smooth' });
+    });
+  </script>
 </body>
 </html>

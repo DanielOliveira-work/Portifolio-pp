@@ -44,6 +44,12 @@ const translations = {
     'projects.card3.details': 'Stack prevista: Web Components. Próximo passo: catalogar padrões.',
 
     'projects.cta': 'Ver estudo',
+    'proj.stack': 'Stack',
+    'proj.type': 'Tipo',
+    'proj.year': 'Ano',
+    'proj.link': 'Link',
+    'proj.about': 'Sobre o projeto',
+    'proj.live': 'Ver projeto ao vivo →',
     'projects.card4.pill': 'E-commerce · Moda',
     'projects.card4.title': 'Brechó Jujuzinha',
     'projects.card4.desc': 'Loja online de brechó com catálogo de produtos e experiência de compra moderna.',
@@ -119,6 +125,12 @@ const translations = {
     'projects.card3.details': 'Planned stack: Web Components. Next step: catalog patterns.',
 
     'projects.cta': 'View case study',
+    'proj.stack': 'Stack',
+    'proj.type': 'Type',
+    'proj.year': 'Year',
+    'proj.link': 'Link',
+    'proj.about': 'About the project',
+    'proj.live': 'View live project →',
     'projects.card4.pill': 'E-commerce · Fashion',
     'projects.card4.title': 'Brechó Jujuzinha',
     'projects.card4.desc': 'Online thrift store with a product catalog and modern shopping experience.',
@@ -154,7 +166,7 @@ const translations = {
   }
 };
 
-let currentLang = 'pt';
+let currentLang = localStorage.getItem('lang') || 'pt';
 
 const EMAILJS_SERVICE_ID = 'service_lj0aixv';
 const EMAILJS_TEMPLATE_ID = 'template_i7kqjr3';
@@ -260,12 +272,20 @@ function setupScheduleForm() {
 
 function setupLangSwitch() {
   const buttons = document.querySelectorAll('.lang-option');
+
+  // Restaura língua salva
+  const saved = localStorage.getItem('lang') || 'pt';
+  if (saved !== currentLang) {
+    currentLang = saved;
+    buttons.forEach((b) => b.classList.toggle('is-active', b.getAttribute('data-lang') === saved));
+  }
+
   buttons.forEach((btn) => {
     btn.addEventListener('click', () => {
       const lang = btn.getAttribute('data-lang');
       if (lang === currentLang) return;
       currentLang = lang;
-
+      localStorage.setItem('lang', lang);
       buttons.forEach((b) => b.classList.toggle('is-active', b === btn));
       applyTranslations(lang);
     });
@@ -399,12 +419,13 @@ function setupThemeToggle() {
     }
     if (theme === 'light') {
       styleTag.textContent = `
-        *:not(.footer-links a):not(.footer-links a *):not(.footer-links):not(#splash):not(#splash *) { color: #0d0f1a !important; }
+        *:not(.footer-links a):not(.footer-links a *):not(.footer-links):not(#splash):not(#splash *):not(.proj-card):not(.proj-card *) { color: #0d0f1a !important; }
         .hero-highlight, .hero-badge { color: #ff335c !important; }
         .hero-primary, .schedule-submit { color: #08090f !important; }
         .lang-option.is-active { color: #ffffff !important; }
         .footer-links a { color: rgba(245,245,245,0.7) !important; }
         .footer-links a:hover { color: #ff335c !important; }
+        .proj-card-title, .proj-card-cat, .proj-card-label { color: #ffffff !important; }
       `;
     } else {
       styleTag.textContent = '';

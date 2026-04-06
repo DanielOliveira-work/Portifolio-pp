@@ -3,99 +3,117 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Agende uma reunião | Daniel Oliveira</title>
+  <title>Contato | Daniel Oliveira</title>
   <script>
-    const t = localStorage.getItem('theme') || 'dark';
-    document.documentElement.setAttribute('data-theme', t);
-    document.documentElement.style.colorScheme = t;
-    document.addEventListener('DOMContentLoaded', () => {
-      document.body.setAttribute('data-theme', t);
-      document.body.style.color = t === 'light' ? '#0d0f1a' : '';
-    });
+    (function() {
+      const t = localStorage.getItem('theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', t);
+      document.documentElement.style.colorScheme = t;
+      document.addEventListener('DOMContentLoaded', function() {
+        const savedLang = localStorage.getItem('lang') || 'pt';
+        document.querySelectorAll('.lang-option').forEach(b => b.classList.toggle('is-active', b.getAttribute('data-lang') === savedLang));
+        document.body.setAttribute('data-theme', t);
+      });
+    })();
   </script>
-  <link rel="stylesheet" href="styles.css?v=2">
+  <link rel="stylesheet" href="styles.css?v=3">
 </head>
-<body>
-  <header class="hero schedule-hero">
-    <div class="hero-frame">
-      <div class="hero-head">
-        <nav class="breadcrumbs" aria-label="Breadcrumb">
-          <a href="index.html" data-i18n="schedule.breadcrumb">← Voltar para o portfólio</a>
-        </nav>
+<body class="page-contact">
+  <!-- Nav igual às outras páginas -->
+  <nav class="page-nav-bar">
+    <div class="hero-head">
+      <div class="hero-meta">
+        <span class="hero-badge" data-i18n="hero.badge">PORTFOLIO 2026</span>
+        <span class="hero-progress" aria-hidden="true"><span class="hero-progress-bar"></span></span>
+        <span class="hero-tagline-meta">Arquitetando o <span style="color:#ff335c">amanhã</span></span>
+      </div>
+      <div class="hero-head-right">
         <div class="lang-switch" role="group" aria-label="Selecionar idioma">
           <button class="lang-option is-active" type="button" data-lang="pt" data-i18n="lang.pt">PT</button>
           <button class="lang-option" type="button" data-lang="en" data-i18n="lang.en">EN</button>
         </div>
-      </div>
-      <div class="schedule-hero-content">
-        <h1 data-i18n="schedule.title">Agende uma reunião</h1>
-        <p data-i18n="schedule.subtitle">Reserve um horário para conversarmos sobre seu próximo projeto.</p>
+        <button class="theme-toggle" type="button" aria-label="Alternar tema" id="themeToggle">
+          <svg class="theme-icon theme-icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+          <svg class="theme-icon theme-icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </button>
       </div>
     </div>
-  </header>
-  <main class="schedule">
-    <section class="schedule-text">
-      <h2 data-i18n="schedule.text.title">Marque uma consulta gratuita</h2>
-      <p data-i18n="schedule.text.body">Marque uma consulta gratuita para combinarmos um projeto demo. Tudo começa com uma ideia. Talvez você queira abrir um negócio. Talvez você queira transformar um passatempo em algo mais sério. Ou talvez você tenha um projeto criativo para divulgar ao mundo. Seja o que for, o modo de contar sua história on-line faz toda a diferença.</p>
-      <div class="contact-links" role="list" style="margin-top: 1.5rem;">
-        <a class="contact-link" href="https://github.com/DanielOliveira-work" target="_blank" rel="noopener" role="listitem">
-          <svg class="contact-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.11.79-.25.79-.56 0-.28-.01-1.03-.02-2.02-3.22.7-3.9-1.55-3.9-1.55-.53-1.35-1.3-1.7-1.3-1.7-1.06-.73.08-.72.08-.72 1.17.08 1.78 1.2 1.78 1.2 1.04 1.78 2.73 1.27 3.4.97.1-.76.4-1.27.73-1.56-2.57-.3-5.27-1.29-5.27-5.75 0-1.27.45-2.31 1.19-3.12-.12-.3-.52-1.52.11-3.16 0 0 .97-.31 3.18 1.19a11.08 11.08 0 0 1 5.79 0c2.2-1.5 3.17-1.19 3.17-1.19.63 1.64.23 2.86.11 3.16.74.81 1.18 1.85 1.18 3.12 0 4.48-2.71 5.44-5.29 5.73.41.35.78 1.04.78 2.1 0 1.52-.01 2.74-.01 3.12 0 .31.21.68.8.56A11.5 11.5 0 0 0 12 .5Z"/></svg>
-          <span data-i18n="contact.github">GitHub</span>
-        </a>
-        <a class="contact-link" href="https://www.linkedin.com/in/danieloliveirawork/" target="_blank" rel="noopener" role="listitem">
-          <svg class="contact-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M4.98 3.5a2.25 2.25 0 1 1 0 4.5 2.25 2.25 0 0 1 0-4.5Zm.02 5.75H2.5V21h2.5V9.25Zm5 0H7.5V21H10V14.5c0-1.54.58-2.5 1.82-2.5 1.18 0 1.68.85 1.68 2.5V21h2.5v-7.25c0-3.02-1.61-4.5-3.77-4.5-1.74 0-2.53.96-2.98 1.63h.02V9.25Z"/></svg>
-          <span data-i18n="contact.linkedin">LinkedIn</span>
-        </a>
-      </div>
-    </section>
-    <section class="schedule-form">
-      <h2 data-i18n="schedule.form.title">Dados para contato</h2>
-      <form action="#" method="post" class="form-grid">
-        <label>
-          <span data-i18n="schedule.form.firstName">Nome*</span>
-          <input type="text" name="firstName" required autocomplete="given-name">
-        </label>
-        <label>
-          <span data-i18n="schedule.form.lastName">Sobrenome</span>
-          <input type="text" name="lastName" autocomplete="family-name">
-        </label>
-        <label>
-          <span data-i18n="schedule.form.phone">Telefone*</span>
-          <input type="tel" name="phone" required autocomplete="tel">
-        </label>
-        <label>
-          <span data-i18n="schedule.form.email">Email*</span>
-          <input type="email" name="email" required autocomplete="email">
-        </label>
-        <fieldset class="contact-preference">
-          <legend data-i18n="schedule.form.preference">Como prefere ser contatado?</legend>
-          <div class="contact-options">
-            <label class="option">
-              <input type="radio" name="contactPreference" value="email" checked>
-              <span data-i18n="schedule.form.prefEmail">Email</span>
-            </label>
-            <label class="option">
-              <input type="radio" name="contactPreference" value="whatsapp">
-              <span data-i18n="schedule.form.prefWhatsapp">WhatsApp</span>
-            </label>
-          </div>
-        </fieldset>
-        <button type="submit" class="schedule-submit" data-i18n="schedule.form.submit">Enviar pedido</button>
-        <p class="form-status" data-form-status></p>
-      </form>
-    </section>
-  </main>
-  <footer class="footer">
-    <span data-i18n="footer.copy">2026 Daniel Oliveira</span>
-    <div class="footer-links">
-      <a href="https://github.com/DanielOliveira-work" target="_blank" rel="noopener" aria-label="GitHub">
-        <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.11.79-.25.79-.56 0-.28-.01-1.03-.02-2.02-3.22.7-3.9-1.55-3.9-1.55-.53-1.35-1.3-1.7-1.3-1.7-1.06-.73.08-.72.08-.72 1.17.08 1.78 1.2 1.78 1.2 1.04 1.78 2.73 1.27 3.4.97.1-.76.4-1.27.73-1.56-2.57-.3-5.27-1.29-5.27-5.75 0-1.27.45-2.31 1.19-3.12-.12-.3-.52-1.52.11-3.16 0 0 .97-.31 3.18 1.19a11.08 11.08 0 0 1 5.79 0c2.2-1.5 3.17-1.19 3.17-1.19.63 1.64.23 2.86.11 3.16.74.81 1.18 1.85 1.18 3.12 0 4.48-2.71 5.44-5.29 5.73.41.35.78 1.04.78 2.1 0 1.52-.01 2.74-.01 3.12 0 .31.21.68.8.56A11.5 11.5 0 0 0 12 .5Z"/></svg>
-      </a>
-      <a href="https://www.instagram.com/daniel.oliveira.tdh/" target="_blank" rel="noopener" aria-label="Instagram">
-        <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-      </a>
+    <div class="hero-nav">
+      <a href="index.html" class="back-btn">← Início</a>
+      <a href="sobre.html" data-i18n="hero.nav.about">Sobre</a>
+      <a href="projetos.html" data-i18n="hero.nav.gallery">Projetos</a>
+      <a href="schedule.html" data-i18n="hero.nav.contacts">Contato</a>
     </div>
-  </footer>
+  </nav>
+
+  <!-- Conteúdo principal centralizado -->
+  <div class="contact-page-body">
+    <div class="contact-page-grid">
+
+      <!-- Lado esquerdo: info + links -->
+      <div class="contact-page-info contact-page-form-wrap">
+        <span class="contact-page-eyebrow" data-i18n="schedule.text.title">Marque uma consulta gratuita</span>
+        <h1 class="contact-page-title" data-i18n="schedule.title">Agende uma reunião</h1>
+        <p class="contact-page-sub" data-i18n="schedule.subtitle">Reserve um horário para conversarmos sobre seu próximo projeto.</p>
+        <p class="contact-page-body-text" data-i18n="schedule.text.body">Tudo começa com uma ideia. Seja qual for o seu projeto, o modo de contar sua história on-line faz toda a diferença.</p>
+
+        <div class="contact-page-links">
+          <a class="contact-page-link" href="https://github.com/DanielOliveira-work" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.11.79-.25.79-.56 0-.28-.01-1.03-.02-2.02-3.22.7-3.9-1.55-3.9-1.55-.53-1.35-1.3-1.7-1.3-1.7-1.06-.73.08-.72.08-.72 1.17.08 1.78 1.2 1.78 1.2 1.04 1.78 2.73 1.27 3.4.97.1-.76.4-1.27.73-1.56-2.57-.3-5.27-1.29-5.27-5.75 0-1.27.45-2.31 1.19-3.12-.12-.3-.52-1.52.11-3.16 0 0 .97-.31 3.18 1.19a11.08 11.08 0 0 1 5.79 0c2.2-1.5 3.17-1.19 3.17-1.19.63 1.64.23 2.86.11 3.16.74.81 1.18 1.85 1.18 3.12 0 4.48-2.71 5.44-5.29 5.73.41.35.78 1.04.78 2.1 0 1.52-.01 2.74-.01 3.12 0 .31.21.68.8.56A11.5 11.5 0 0 0 12 .5Z"/></svg>
+            <span data-i18n="contact.github">GitHub</span>
+          </a>
+          <a class="contact-page-link" href="https://www.linkedin.com/in/danieloliveirawork/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M4.98 3.5a2.25 2.25 0 1 1 0 4.5 2.25 2.25 0 0 1 0-4.5Zm.02 5.75H2.5V21h2.5V9.25Zm5 0H7.5V21H10V14.5c0-1.54.58-2.5 1.82-2.5 1.18 0 1.68.85 1.68 2.5V21h2.5v-7.25c0-3.02-1.61-4.5-3.77-4.5-1.74 0-2.53.96-2.98 1.63h.02V9.25Z"/></svg>
+            <span data-i18n="contact.linkedin">LinkedIn</span>
+          </a>
+          <a class="contact-page-link" href="https://www.instagram.com/daniel.oliveira.tdh/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            <span>Instagram</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Lado direito: formulário -->
+      <div class="contact-page-form-wrap">
+        <h2 class="contact-page-form-title" data-i18n="schedule.form.title">Dados para contato</h2>
+        <form action="#" method="post" class="form-grid">
+          <label>
+            <span data-i18n="schedule.form.firstName">Nome*</span>
+            <input type="text" name="firstName" required autocomplete="given-name">
+          </label>
+          <label>
+            <span data-i18n="schedule.form.lastName">Sobrenome</span>
+            <input type="text" name="lastName" autocomplete="family-name">
+          </label>
+          <label>
+            <span data-i18n="schedule.form.phone">Telefone*</span>
+            <input type="tel" name="phone" required autocomplete="tel">
+          </label>
+          <label>
+            <span data-i18n="schedule.form.email">Email*</span>
+            <input type="email" name="email" required autocomplete="email">
+          </label>
+          <fieldset class="contact-preference">
+            <legend data-i18n="schedule.form.preference">Como prefere ser contatado?</legend>
+            <div class="contact-options">
+              <label class="option">
+                <input type="radio" name="contactPreference" value="email" checked>
+                <span data-i18n="schedule.form.prefEmail">Email</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="contactPreference" value="whatsapp">
+                <span data-i18n="schedule.form.prefWhatsapp">WhatsApp</span>
+              </label>
+            </div>
+          </fieldset>
+          <button type="submit" class="schedule-submit" data-i18n="schedule.form.submit">Enviar pedido</button>
+          <p class="form-status" data-form-status></p>
+        </form>
+      </div>
+
+    </div>
+  </div>
+
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script src="script.js"></script>
 </body>

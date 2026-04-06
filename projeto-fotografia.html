@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Daniel Oliveira | Sobre</title>
+  <title>Blog de Fotografia | Daniel Oliveira</title>
   <script>
     (function() {
       const t = localStorage.getItem('theme') || 'dark';
@@ -16,7 +16,7 @@
       });
     })();
   </script>
-  <link rel="stylesheet" href="styles.css?v=2">
+  <link rel="stylesheet" href="styles.css?v=3">
 </head>
 <body>
   <nav class="page-nav-bar">
@@ -27,7 +27,7 @@
         <span class="hero-tagline-meta">Arquitetando o <span style="color:#ff335c">amanhã</span></span>
       </div>
       <div class="hero-head-right">
-        <div class="lang-switch" role="group" aria-label="Selecionar idioma">
+        <div class="lang-switch" role="group">
           <button class="lang-option is-active" type="button" data-lang="pt" data-i18n="lang.pt">PT</button>
           <button class="lang-option" type="button" data-lang="en" data-i18n="lang.en">EN</button>
         </div>
@@ -38,34 +38,45 @@
       </div>
     </div>
     <div class="hero-nav">
-      <a href="index.html" class="back-btn">← Início</a>
+      <a href="projetos.html" class="back-btn">← Projetos</a>
       <a href="sobre.html" data-i18n="hero.nav.about">Sobre</a>
       <a href="projetos.html" data-i18n="hero.nav.gallery">Projetos</a>
       <a href="schedule.html" data-i18n="hero.nav.contacts">Contato</a>
     </div>
   </nav>
-  <div class="page-frame">
-    <section class="bio-section">
-      <h2 data-i18n="about.title">Sobre mim</h2>
-      <div class="bio">
-        <p class="bio-tagline" data-i18n="about.tagline">🚀 Desenvolvedor Full-Stack | Gestão de Projetos & Visão Criativa</p>
-        <p data-i18n="about.intro">Sou um desenvolvedor focado em transformar ideias complexas em soluções digitais de alto impacto. Atualmente cursando Análise e Desenvolvimento de Sistemas (ADS), combino o rigor da engenharia de software com a agilidade da gestão moderna.</p>
-        <div class="bio-grid">
-          <div class="bio-block">
-            <h3 data-i18n="about.frontend.title">Front-end com Olhar de Fotógrafo</h3>
-            <p data-i18n="about.frontend.desc">Não apenas código, mas interfaces intuitivas e responsivas. Minha paixão pela fotografia apurou minha percepção visual, garantindo um UX/UI que preza pela harmonia e performance.</p>
-          </div>
-          <div class="bio-block">
-            <h3 data-i18n="about.backend.title">Back-end Robusto</h3>
-            <p data-i18n="about.backend.desc">Lógica de negócio com código limpo, seguro e escalável. Construo APIs pensando no futuro da manutenção e na velocidade da entrega.</p>
-          </div>
-        </div>
-        <p data-i18n="about.closing">Minha marca registrada é a precisão. Acredito que o software, assim como uma boa fotografia, depende do detalhe e do timing perfeito.</p>
-        <p class="bio-cta" data-i18n="about.cta">Se você busca um parceiro que domina a stack completa e entrega com velocidade, vamos construir algo notável.</p>
-        <p>📷 Nas horas vagas, exploro o mundo através das lentes. Confira meu olhar no <a href="https://www.instagram.com/refex.street/" target="_blank" rel="noopener" style="color:#ff335c">Instagram</a>.</p>
+
+  <div class="proj-detail-wrap">
+    <div class="proj-detail-cover">
+      <img src="assets/Captura de tela 2025-12-14 125703.png" alt="Blog de Fotografia" />
+      <div class="proj-detail-cover-overlay">
+        <span class="proj-detail-pill" data-i18n="projects.card1.pill">Blog · Fotografia</span>
+        <h1 class="proj-detail-h1" data-i18n="projects.card1.title">Blog de Fotografia</h1>
       </div>
-    </section>
+    </div>
+
+    <div class="proj-detail-content">
+      <div class="proj-detail-meta-grid">
+        <div class="proj-detail-meta-item">
+          <span class="proj-detail-meta-label" data-i18n="proj.stack">Stack</span>
+          <span class="proj-detail-meta-value">HTML, CSS, JavaScript</span>
+        </div>
+        <div class="proj-detail-meta-item">
+          <span class="proj-detail-meta-label" data-i18n="proj.type">Tipo</span>
+          <span class="proj-detail-meta-value" data-i18n="projects.card1.details">Implementado com HTML, CSS e JavaScript, focado em vitrine de fotos.</span>
+        </div>
+        <div class="proj-detail-meta-item">
+          <span class="proj-detail-meta-label" data-i18n="proj.year">Ano</span>
+          <span class="proj-detail-meta-value">2025</span>
+        </div>
+      </div>
+
+      <div class="proj-detail-desc">
+        <h2 class="proj-detail-h2" data-i18n="proj.about">Sobre o projeto</h2>
+        <p data-i18n="projects.card1.desc">Blog de fotografia com galeria de imagens para destacar trabalhos visuais.</p>
+      </div>
+    </div>
   </div>
+
   <footer class="footer">
     <span data-i18n="footer.copy">2026 Daniel Oliveira</span>
     <div class="footer-links">
