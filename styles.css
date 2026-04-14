@@ -2469,3 +2469,661 @@ body[data-theme="light"] .form-grid label,
 html[data-theme="light"] .form-grid label {
   color: #0d0f1a !important;
 }
+
+
+/* ============================================
+   RESPONSIVIDADE — TABLET (481px a 1024px)
+   ============================================ */
+@media (max-width: 1024px) and (min-width: 481px) {
+
+  /* === GLOBAL === */
+  body::before {
+    background-size: auto 70%;
+    opacity: 0.18;
+  }
+  body::after {
+    background-size: auto 60%;
+    opacity: 0.12;
+  }
+
+  /* === HERO (index.html) === */
+  .hero {
+    padding: clamp(2rem, 4vw, 3rem) 0;
+  }
+  .hero-frame {
+    width: min(100%, 94vw);
+    padding: clamp(2rem, 4vw, 3rem) clamp(1.5rem, 3vw, 2.5rem);
+    gap: clamp(1.5rem, 4vw, 2.5rem);
+  }
+  .hero::after {
+    background:
+      url('assets/danielimage.png') left -2% bottom -5% / auto 75% no-repeat,
+      url('assets/logo-lateral.png') right 4% center / auto 65% no-repeat;
+    opacity: 0.22;
+  }
+  .hero-photo-wrap {
+    width: clamp(200px, 28vw, 340px);
+  }
+  .hero-head {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .hero-meta {
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+  .hero-tagline-meta {
+    display: none;
+  }
+  .hero-nav {
+    gap: clamp(1rem, 3vw, 2rem);
+    font-size: 0.72rem;
+  }
+  .hero-title {
+    font-size: clamp(2.4rem, 5.5vw, 4rem);
+  }
+  .hero-copy {
+    max-width: 480px;
+  }
+  .hero-copy p {
+    font-size: 0.95rem;
+  }
+  .hero-card {
+    max-width: 420px;
+    padding: 1.25rem 1.5rem;
+  }
+  .hero-card p {
+    font-size: 0.95rem;
+  }
+  .hero-actions {
+    width: min(100%, 300px);
+  }
+  .hero-primary,
+  .hero-secondary {
+    padding: 0.85rem 1.8rem;
+    font-size: 0.72rem;
+  }
+
+  /* === PAGE NAV BAR (páginas internas) === */
+  .page-nav-bar {
+    padding: 0.65rem clamp(0.75rem, 3vw, 2rem);
+  }
+  .hero-badge {
+    font-size: 0.65rem;
+    padding: 0.3rem 0.75rem;
+  }
+
+  /* === PAGE FRAME (sobre.html) === */
+  .page-frame {
+    width: min(100%, 94vw);
+    padding: clamp(1.5rem, 3vw, 2.5rem);
+    border-radius: clamp(20px, 4vw, 36px);
+  }
+  .bio-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+  }
+  .bio-block {
+    padding: 1.5rem;
+  }
+  .bio-block h3 {
+    font-size: 1.2rem;
+  }
+
+  /* === PROJETOS (projetos.html) === */
+  .proj-item {
+    flex: 0 0 clamp(240px, 45vw, 380px);
+  }
+  .proj-item-name {
+    font-size: clamp(1.1rem, 2vw, 1.6rem);
+  }
+  .proj-bar {
+    padding: 0.55rem 1.25rem;
+  }
+
+  /* === DETALHE DO PROJETO === */
+  .proj-detail-wrap {
+    max-width: 100%;
+    padding: 0 1.5rem 2rem;
+    margin: 1.5rem auto;
+  }
+  .proj-detail-cover {
+    height: clamp(220px, 35vh, 380px);
+    border-radius: 16px;
+    margin-bottom: 2rem;
+  }
+  .proj-detail-content {
+    grid-template-columns: 200px 1fr;
+    gap: 2rem;
+  }
+  .proj-detail-meta-grid {
+    padding: 1.25rem;
+  }
+
+  /* === CONTATO (schedule.html) === */
+  .contact-page-body {
+    padding: clamp(1.5rem, 4vw, 3rem) clamp(1rem, 3vw, 2rem);
+  }
+  .contact-page-grid {
+    gap: clamp(1.5rem, 4vw, 3rem);
+  }
+  .contact-page-title {
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+  }
+  .contact-page-form-wrap {
+    padding: clamp(1.5rem, 3vw, 2rem);
+  }
+  .form-grid {
+    gap: 1.25rem;
+  }
+  .contact-preference {
+    padding: 1.1rem 1.25rem;
+  }
+  .contact-options {
+    gap: 2rem;
+  }
+
+  /* === SCHEDULE (layout antigo se usado) === */
+  .schedule {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .schedule-text {
+    text-align: center;
+    align-items: center;
+  }
+  .schedule-form {
+    padding: 2rem;
+  }
+
+  /* === SLIDER === */
+  .project-card {
+    flex: 0 0 clamp(220px, 50vw, 360px);
+  }
+  .slider-viewport {
+    padding: clamp(0.75rem, 2vw, 1.5rem);
+  }
+
+  /* === FOOTER === */
+  .footer {
+    padding: 1rem 0.75rem;
+  }
+
+  /* === MAIN === */
+  main {
+    padding: 0 2rem 4rem;
+    gap: 3rem;
+  }
+  .section {
+    padding: 2.25rem 1.75rem;
+    border-radius: 28px;
+  }
+}
+
+
+/* ============================================
+   RESPONSIVIDADE — MOBILE (até 480px)
+   ============================================ */
+@media (max-width: 480px) {
+
+  /* === GLOBAL === */
+  body::before {
+    background-size: auto 55%;
+    opacity: 0.12;
+  }
+  body::after {
+    display: none;
+  }
+
+  /* === HERO (index.html) === */
+  .hero {
+    min-height: auto;
+  }
+  .hero::after {
+    background:
+      url('assets/logo-lateral.png') right 3% bottom 10% / auto 40% no-repeat;
+    opacity: 0.12;
+  }
+  .hero-frame {
+    border-radius: clamp(16px, 4vw, 28px);
+    gap: 1.25rem;
+  }
+  .hero-head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+  .hero-head-right {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .hero-meta {
+    width: 100%;
+    gap: 0.6rem;
+  }
+  .hero-tagline-meta {
+    display: none;
+  }
+  .hero-progress {
+    display: none;
+  }
+  .hero-badge {
+    font-size: 0.6rem;
+    padding: 0.28rem 0.65rem;
+  }
+  .hero-title {
+    font-size: clamp(2rem, 8vw, 3rem);
+    gap: 0.25rem;
+  }
+  .hero-copy {
+    max-width: 100%;
+    gap: 1rem;
+  }
+  .hero-copy p {
+    font-size: 0.9rem;
+    max-width: 100%;
+  }
+  .hero-card {
+    max-width: 100%;
+    padding: 1.15rem 1.25rem;
+    border-radius: 18px;
+    gap: 1rem;
+  }
+  .hero-card p {
+    font-size: 0.9rem;
+  }
+  .hero-inner {
+    gap: 1rem;
+  }
+  .eyebrow {
+    font-size: 0.68rem;
+    letter-spacing: 0.3em;
+  }
+  .lang-switch {
+    gap: 0.25rem;
+    padding: 0.2rem;
+  }
+  .lang-option {
+    font-size: 0.65rem;
+    padding: 0.4rem 0.65rem;
+  }
+  .theme-toggle {
+    width: 2rem;
+    height: 2rem;
+  }
+  .theme-icon {
+    width: 0.85rem;
+    height: 0.85rem;
+  }
+
+  /* === PAGE NAV BAR (páginas internas) === */
+  .page-nav-bar {
+    padding: 0.5rem 0.75rem;
+    gap: 0.35rem;
+  }
+  .page-nav-bar .hero-head {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    gap: 0.5rem;
+  }
+  .page-nav-bar .hero-meta {
+    flex: 0 0 auto;
+    min-width: 0;
+    gap: 0.5rem;
+  }
+  .page-nav-bar .hero-meta .hero-progress {
+    display: none;
+  }
+  .page-nav-bar .hero-meta .hero-tagline-meta {
+    display: none;
+  }
+  .page-nav-bar .hero-head-right {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .page-nav-bar .hero-head-right .lang-switch {
+    gap: 0.15rem;
+    padding: 0.15rem;
+  }
+  .page-nav-bar .hero-head-right .lang-option {
+    font-size: 0.58rem;
+    padding: 0.3rem 0.5rem;
+    letter-spacing: 0.2em;
+  }
+  .page-nav-bar .hero-nav {
+    gap: 0.6rem;
+    font-size: 0.6rem;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    justify-content: flex-start;
+  }
+  .page-nav-bar .hero-nav::-webkit-scrollbar {
+    display: none;
+  }
+  .page-nav-bar .hero-nav a {
+    white-space: nowrap;
+    flex-shrink: 0;
+    font-size: 0.6rem;
+    letter-spacing: 0.12em;
+  }
+  .page-nav-bar .back-btn {
+    font-size: 0.58rem !important;
+    letter-spacing: 0.1em !important;
+  }
+
+  /* === PAGE FRAME (sobre.html) === */
+  .bio-section h2 {
+    font-size: 0.88rem;
+    letter-spacing: 0.35em;
+    margin-bottom: 1.25rem;
+  }
+  .bio-tagline {
+    font-size: 0.85rem;
+  }
+  .bio-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  .bio-block {
+    padding: 1.5rem;
+    border-radius: 18px;
+  }
+  .bio-block h3 {
+    font-size: 1.3rem;
+  }
+  .bio-block p {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+  .bio p {
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+  .bio-cta {
+    font-size: 1rem;
+  }
+
+  /* === PROJETOS (projetos.html) === */
+  .proj-stage {
+    min-height: 0;
+  }
+  .proj-item {
+    flex: 0 0 85vw;
+  }
+  .proj-item-top {
+    top: 1.25rem;
+    left: 1.25rem;
+    right: 1.25rem;
+  }
+  .proj-item-cat {
+    font-size: 0.55rem;
+    letter-spacing: 0.25em;
+  }
+  .proj-item-name {
+    font-size: clamp(1.1rem, 5vw, 1.5rem);
+  }
+  .proj-item-label {
+    bottom: 1.5rem;
+    left: 1rem;
+    font-size: 0.5rem;
+  }
+  .proj-bar {
+    padding: 0.5rem 1rem;
+    gap: 1rem;
+  }
+  .proj-btn {
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+  }
+
+  /* === DETALHE DO PROJETO === */
+  .proj-detail-wrap {
+    padding: 0 1rem 2rem;
+    margin: 1rem auto;
+  }
+  .proj-detail-cover {
+    height: clamp(180px, 30vh, 280px);
+    border-radius: 14px;
+    margin-bottom: 1.5rem;
+  }
+  .proj-detail-cover-overlay {
+    padding: 1.25rem;
+  }
+  .proj-detail-pill {
+    font-size: 0.58rem;
+    letter-spacing: 0.25em;
+  }
+  .proj-detail-h1 {
+    font-size: clamp(1.4rem, 6vw, 2rem);
+  }
+  .proj-detail-content {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  .proj-detail-meta-grid {
+    padding: 1.25rem;
+    border-radius: 14px;
+    gap: 1.25rem;
+  }
+  .proj-detail-meta-label {
+    font-size: 0.58rem;
+  }
+  .proj-detail-meta-value {
+    font-size: 0.88rem;
+  }
+  .proj-detail-link {
+    font-size: 0.82rem;
+  }
+  .proj-detail-h2 {
+    font-size: 0.72rem;
+    letter-spacing: 0.3em;
+  }
+  .proj-detail-desc p {
+    font-size: 0.95rem;
+  }
+
+  /* === CONTATO (schedule.html) === */
+  .contact-page-body {
+    padding: 1.5rem 1rem;
+    align-items: flex-start;
+  }
+  .contact-page-grid {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+  .contact-page-eyebrow {
+    font-size: 0.72rem;
+    letter-spacing: 0.35em;
+  }
+  .contact-page-title {
+    font-size: clamp(1.8rem, 8vw, 2.6rem);
+    margin-bottom: 0.75rem;
+  }
+  .contact-page-sub {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+  .contact-page-body-text {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+  }
+  .contact-page-links {
+    gap: 0.85rem;
+  }
+  .contact-page-link {
+    font-size: 0.85rem;
+    padding: 0.6rem 1.1rem;
+  }
+  .contact-page-form-wrap {
+    padding: 1.5rem;
+    border-radius: 22px;
+  }
+  .contact-page-form-title {
+    font-size: 0.95rem;
+    margin-bottom: 1.25rem;
+  }
+  .form-grid {
+    grid-template-columns: 1fr;
+    gap: 1.15rem;
+  }
+  .form-grid label {
+    font-size: 0.95rem;
+  }
+  .form-grid input {
+    padding: 0.75rem 0.85rem;
+    border-radius: 14px;
+    font-size: 1rem;
+  }
+  .contact-preference {
+    padding: 1.1rem 1.15rem;
+    border-radius: 16px;
+  }
+  .contact-preference legend {
+    font-size: 0.9rem;
+  }
+  .contact-options {
+    gap: 1.5rem;
+    justify-content: center;
+  }
+  .contact-preference .option {
+    font-size: 0.92rem;
+  }
+  .schedule-submit {
+    padding: 0.9rem 1.4rem;
+    font-size: 0.85rem;
+    width: 100%;
+  }
+
+  /* === SCHEDULE (layout antigo) === */
+  .schedule {
+    gap: 2rem;
+  }
+  .schedule-text {
+    padding: 1.5rem;
+    border-radius: 20px;
+  }
+  .schedule-text h2 {
+    font-size: 1.25rem;
+  }
+  .schedule-text p {
+    font-size: 0.92rem;
+  }
+  .schedule-form {
+    padding: 1.5rem;
+    border-radius: 20px;
+  }
+  .schedule-form h2 {
+    font-size: 1.1rem;
+  }
+
+  /* === SLIDER === */
+  .slider-viewport {
+    border-radius: 20px;
+    padding: 0.75rem;
+  }
+  .slider-arrow {
+    width: 2.4rem;
+    height: 2.4rem;
+    font-size: 1.1rem;
+  }
+
+  /* === FOOTER === */
+  .footer {
+    padding: 1rem 0.75rem;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    gap: 0.65rem;
+  }
+  .footer-links {
+    gap: 0.85rem;
+  }
+  .footer-links a {
+    width: 2rem;
+    height: 2rem;
+  }
+  .footer-links a svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  /* === MAIN === */
+  main {
+    padding: 0 1rem 2.5rem;
+    gap: 2rem;
+  }
+  .section {
+    border-radius: 18px;
+  }
+
+  /* === SPLASH (index.html) === */
+  #splash {
+    padding: 0 1rem;
+  }
+}
+
+/* ============================================
+   RESPONSIVIDADE — TABLET PORTRAIT (481–768px)
+   Refinamentos adicionais para tablets menores
+   ============================================ */
+@media (max-width: 768px) and (min-width: 481px) {
+
+  /* Contato: empilha grid */
+  .contact-page-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  /* Hero photo menor em tablet portrait */
+  .hero-photo-wrap {
+    width: clamp(180px, 24vw, 260px);
+  }
+
+  /* Detalhe projeto: empilha sidebar */
+  .proj-detail-content {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  /* Projetos: cards maiores */
+  .proj-item {
+    flex: 0 0 clamp(260px, 55vw, 400px);
+  }
+
+  /* Bio grid: coluna única em tablet estreito */
+  .bio-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Schedule form: coluna única */
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================
+   FIX: Garantir que page-nav-bar funcione bem
+   em todos os breakpoints mobile/tablet
+   ============================================ */
+@media (max-width: 1024px) {
+  .page-nav-bar .hero-nav {
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+  .page-nav-bar .hero-nav::-webkit-scrollbar {
+    display: none;
+  }
+  .page-nav-bar .hero-nav a {
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+}
