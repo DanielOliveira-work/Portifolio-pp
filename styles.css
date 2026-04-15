@@ -1161,6 +1161,45 @@ body[data-theme="light"] .eyebrow {
   box-shadow: 0 20px 40px -25px rgba(60, 68, 44, 0.55);
 }
 
+/* Mensagem de status do formulário */
+.form-status {
+  grid-column: 1 / -1;
+  text-align: center;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0.5rem 0 0;
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+  min-height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-status.is-success {
+  color: #4ade80;
+  background: rgba(74, 222, 128, 0.1);
+  border: 1px solid rgba(74, 222, 128, 0.2);
+}
+
+.form-status.is-error {
+  color: #f87171;
+  background: rgba(248, 113, 113, 0.1);
+  border: 1px solid rgba(248, 113, 113, 0.2);
+}
+
+body[data-theme="light"] .form-status.is-success,
+html[data-theme="light"] .form-status.is-success {
+  color: #16a34a;
+  background: rgba(74, 222, 128, 0.15);
+}
+
+body[data-theme="light"] .form-status.is-error,
+html[data-theme="light"] .form-status.is-error {
+  color: #dc2626;
+  background: rgba(248, 113, 113, 0.15);
+}
+
 main {
   max-width: 1180px;
   margin: 0 auto;
